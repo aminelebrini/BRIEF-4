@@ -15,7 +15,6 @@
 // const btn14 = document.getElementsByClassName('fourteen');
 // const btn15 = document.getElementsByClassName('fiveteen');
 // const btn16 = document.getElementsByClassName('sixteen');
-let count = 1;
 let score = 0;
 let numbers = [];
 let cards = [];
@@ -25,31 +24,28 @@ for(let n = 1 ; n < 9 ; n++)
 {
     numbers.push(n);
     numbers.push(n);
-
-    console.log(numbers);
 }
 
 numbers.sort(()=> Math.random() - 0.5);
-for(let i = 1 ; i < 17 ; i++)
+
+console.log(numbers)
+const display = document.getElementById('display');
+for(let i = 1 ; i <= 16 ; i++)
 {
-    const display = document.getElementById('display');
     let card = document.createElement('button');
     card.className = `card${i}`;
 
     let text = document.createElement('h2');
     text.className = `one${i}`;
-    text.textContent = numbers[i];
+    text.textContent = numbers[i - 1];
     text.id = `one${i}`;
     text.style.display = 'none';
     text.style.color = 'white';
     text.style.fontSize = '50px';
 
-    cards[i] = text.textContent;
 
-    console.log(cards);
     card.appendChild(text);
     display.appendChild(card);
-    const btn1 = document.querySelector('.card');
 
     card.addEventListener('click', function onclick(e){
 
@@ -59,6 +55,23 @@ for(let i = 1 ; i < 17 ; i++)
             firstEvent = card;
         }else{
             secondEvent = card;
+            console.log(secondEvent);
         }
+        if(firstEvent.textContent === secondEvent.textContent)
+        {
+            score += 1;
+            firstEvent.querySelector('h2').style.display = 'block';
+            secondEvent.querySelector('h2').style.display = 'block';
+            document.getElementById('score').innerText = score;
+        }else{
+            setTimeout(()=>{
+                firstEvent.querySelector('h2').style.display = 'none';
+                secondEvent.querySelector('h2').style.display = 'none';
+            }, 800);
+        }
+        setTimeout(()=>{
+            firstEvent = null;
+            secondEvent = null;
+        }, 800);
     });
 }
