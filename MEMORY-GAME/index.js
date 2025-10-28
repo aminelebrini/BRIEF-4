@@ -47,7 +47,7 @@ for(let i = 1 ; i <= 16 ; i++)
     card.appendChild(text);
     display.appendChild(card);
 
-    card.addEventListener('click', function onclick(e){
+    card.addEventListener('click', function onclick(){
 
         text.style.display = 'block';
         if(!firstEvent)
