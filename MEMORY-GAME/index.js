@@ -17,7 +17,7 @@
 // const btn16 = document.getElementsByClassName('sixteen');
 
 let numbers = [];
-for(let n = 1 ; n <= 8 ; n++)
+for(let n = 1 ; n < 9 ; n++)
 {
     numbers.push(n);
     numbers.push(n);
@@ -38,6 +38,7 @@ for(let i = 1 ; i < 17 ; i++)
     text.id = `one${i}`;
     text.style.display = 'none';
     text.style.color = 'white';
+    text.style.fontSize = '50px';
 
     cards[i] = text.textContent;
 
@@ -45,15 +46,15 @@ for(let i = 1 ; i < 17 ; i++)
     card.appendChild(text);
     display.appendChild(card);
 
-
+    let count = 0;
     card.addEventListener('click', function onclick(){
     if(text.style.display === 'none')
     {
         text.style.display = 'block';
     }
-    if(cards[i].textContent === cards[i+1].textContent)
-    {
-        document.getElementById('score').innerText = 1;
-    }
+        if(cards[i].textContent === cards[i+1].textContent)
+        {
+            document.getElementById('score').innerText = count + 1;
+        }
 }, {once : true});
 }
