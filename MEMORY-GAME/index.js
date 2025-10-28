@@ -63,6 +63,13 @@ for(let i = 1 ; i <= 16 ; i++)
             firstEvent.querySelector('h2').style.display = 'block';
             secondEvent.querySelector('h2').style.display = 'block';
             document.getElementById('score').innerText = score;
+            if(score === 8)
+            {
+                const cong = document.createElement('div');
+                cong.className = 'congratulations';
+                cong.textContent = "Congratulations, you have finished the game with an 8 Point score.";
+                display.appendChild(cong);
+            }
         }else{
             setTimeout(()=>{
                 firstEvent.querySelector('h2').style.display = 'none';
