@@ -24,10 +24,10 @@ for(let n = 1 ; n <= 8 ; n++)
 
     console.log(numbers);
 }
+let cards = [];
 numbers.sort(()=> Math.random() - 0.5);
 for(let i = 1 ; i < 17 ; i++)
 {
-    let cards = [];
     const display = document.getElementById('display');
     let card = document.createElement('button');
     card.className = `card${i}`;
@@ -57,5 +57,3 @@ for(let i = 1 ; i < 17 ; i++)
     }
 }, {once : true});
 }
-
-
