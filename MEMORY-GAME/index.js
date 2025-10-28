@@ -15,8 +15,12 @@
 // const btn14 = document.getElementsByClassName('fourteen');
 // const btn15 = document.getElementsByClassName('fiveteen');
 // const btn16 = document.getElementsByClassName('sixteen');
-
+let count = 1;
+let score = 0;
 let numbers = [];
+let cards = [];
+let firstEvent = null;
+let secondEvent = null;
 for(let n = 1 ; n < 9 ; n++)
 {
     numbers.push(n);
@@ -24,7 +28,7 @@ for(let n = 1 ; n < 9 ; n++)
 
     console.log(numbers);
 }
-let cards = [];
+
 numbers.sort(()=> Math.random() - 0.5);
 for(let i = 1 ; i < 17 ; i++)
 {
@@ -45,16 +49,16 @@ for(let i = 1 ; i < 17 ; i++)
     console.log(cards);
     card.appendChild(text);
     display.appendChild(card);
+    const btn1 = document.querySelector('.card');
 
-    let count = 0;
-    card.addEventListener('click', function onclick(){
-    if(text.style.display === 'none')
-    {
+    card.addEventListener('click', function onclick(e){
+
         text.style.display = 'block';
-    }
-        if(cards[i].textContent === cards[i+1].textContent)
+        if(!firstEvent)
         {
-            document.getElementById('score').innerText = count + 1;
+            firstEvent = card;
+        }else{
+            secondEvent = card;
         }
-}, {once : true});
+    });
 }
