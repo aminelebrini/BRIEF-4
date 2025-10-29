@@ -68,7 +68,7 @@ header{
     
 }
 .card1 , .card2 , .card3, .card4, .card5 , .card6, .card7, .card8 , .card9 , .card10 , .card11 , .card12, .card13, .card14, .card15, .card16{
-    width: 170px;
+    width: 150px;
     border-radius: 15px;
     box-shadow: 0px 6px 6px 0px rgba(0, 0, 0, 0.545);
     background-color: white;
