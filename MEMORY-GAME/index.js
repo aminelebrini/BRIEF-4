@@ -66,13 +66,13 @@ for(let i = 1 ; i <= 16 ; i++)
             firstEvent.querySelector('h2').style.display = 'block';
             secondEvent.querySelector('h2').style.display = 'block';
             document.getElementById('score').innerText = score;
-            if(score >= 8)
+            if(score == 8)
             {
                 const cong = document.createElement('div');
                 cong.className = 'congratulations';
                 cong.textContent = "🎉 Congratulations! You have finished the game with an 8-point score.";
                 cong.style.position = 'fixed';
-                cong.style.top = '20px';
+                cong.style.top = '60px';
                 cong.style.left = '50%';
                 cong.style.transform = 'translateX(-50%)';
                 cong.style.backgroundColor = '#4caf50';
