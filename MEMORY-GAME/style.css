@@ -9,8 +9,8 @@ header{
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: space-around;
-    background-color: rgb(26, 25, 25);
+    justify-content: center;
+    background-color: #092F4C;
     color: white;
 }
 .titre{
@@ -18,10 +18,13 @@ header{
     flex-direction: row;
     align-items: center;
     justify-content: flex-start;
-    width: 80%;
+    width: 70%;
+}
+.titre h1{
+    text-align: center;
 }
 .personal-info{
-    width: 50%;
+    width: 40%;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -43,6 +46,7 @@ header{
 }
 .score p{
     font-size: 25px;
+    text-align: center;
     margin-left: 1%;
 }
 .container{
@@ -52,11 +56,11 @@ header{
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    background-color: #A62937;
 }
 .display{
     display: grid;
     grid-template-columns: repeat(8, 1fr);
-    background-color: rgb(43, 41, 41);
     width: 100%;
     height: 86vh;
     padding: 15px;
@@ -66,21 +70,22 @@ header{
 .card1 , .card2 , .card3, .card4, .card5 , .card6, .card7, .card8 , .card9 , .card10 , .card11 , .card12, .card13, .card14, .card15, .card16{
     width: 170px;
     border-radius: 15px;
-    box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.545);
+    box-shadow: 0px 6px 6px 0px rgba(0, 0, 0, 0.545);
     background-color: white;
     height: 250px;
+    border-color: transparent;
 }
-.dis{
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: flex-end;
-    z-index: 1;
+/* .congratulations{
+    animation: top_to_bottom 1s ease;
 }
-.congratulations{
-        padding: 20px;
-        background-color: rgb(20, 217, 20);
-        font-size: 25px;
-        color: white;
-}
+
+@keyframes top_to_bottom {
+  0% {
+    transform: translateY(-60px); 
+    opacity: 0; 
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+} */
