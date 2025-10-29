@@ -32,11 +32,14 @@ Une fois toutes les paires trouvées, un message de félicitations apparaît �
 
 ### 1️⃣ Cloner le projet
 ```bash
-git clone https://github.com/ton-utilisateur/memory-game.git
+git clone https://github.com/aminelebrini/BRIEF-4.git
 
-cd memory-game
+cd BRIEF-4
+
+cd MEMORY-GAME
 
 ```
+Ou cliquez sur ce lien : https://memory-game-chi-dun.vercel.app/ 
 ---
 
 ## 🎮 Comment jouer
