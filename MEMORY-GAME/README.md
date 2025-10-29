@@ -36,9 +36,10 @@ git clone https://github.com/ton-utilisateur/memory-game.git
 
 cd memory-game
 
+```
 ---
 
-🎮 Comment jouer
+## 🎮 Comment jouer
 
 Clique sur une première carte pour la révéler.
 
