@@ -34,19 +34,20 @@ for(let i = 1 ; i <= 16 ; i++)
 {
     let card = document.createElement('button');
     card.className = `card${i}`;
-
+    card.style.backgroundImage = "url('https://cdn.wallpapersafari.com/54/28/qOxN6n.png')";
     let text = document.createElement('h2');
     text.className = `one${i}`;
     text.textContent = numbers[i - 1];
     text.id = `one${i}`;
     text.style.display = 'none';
-    text.style.color = 'white';
+    text.style.color = 'rgb(43, 41, 41)';
     text.style.fontSize = '50px';
 
 
     card.appendChild(text);
     display.appendChild(card);
 
+    document.getElementById('score').innerText = 0;
     card.addEventListener('click', function onclick(){
 
         text.style.display = 'block';
@@ -55,7 +56,6 @@ for(let i = 1 ; i <= 16 ; i++)
             firstEvent = card;
         }else{
             secondEvent = card;
-            console.log(secondEvent);
         }
         if(firstEvent.textContent === secondEvent.textContent)
         {
@@ -63,7 +63,8 @@ for(let i = 1 ; i <= 16 ; i++)
             firstEvent.querySelector('h2').style.display = 'block';
             secondEvent.querySelector('h2').style.display = 'block';
             document.getElementById('score').innerText = score;
-            if(score === 8)
+
+            if(score >= 8)
             {
                 const cong = document.createElement('div');
                 cong.className = 'congratulations';
@@ -81,4 +82,5 @@ for(let i = 1 ; i <= 16 ; i++)
             secondEvent = null;
         }, 800);
     });
+    
 }
