@@ -21,7 +21,7 @@ const texts =
 document.getElementById('display-txt').innerText = texts;
 const input = document.getElementById('input-text');
 
-    input.addEventListener('keypress', ()=>{
+    input.addEventListener('keydown', ()=>{
     let html = '';
     const value = input.value;
     for(let i = 0; i < texts.length; i++)
@@ -30,10 +30,32 @@ const input = document.getElementById('input-text');
       html += `<span>${texts[i]}</span>`;
     } else if (value[i] === texts[i]) {
       html += `<span style="color:green">${texts[i]}</span>`;
-    } else {
+      
+    } else   {
       html += `<span style="color:red">${texts[i]}</span>`;
     }
     }
   document.getElementById('display-txt').innerHTML = html;
 });
+
+
+// document.getElementById('display-txt').innerText = texts;
+// const input = document.getElementById('input-text');
+
+//     input.addEventListener('keypress', (e)=>{
+//     let html = '';
+//     const value = e.key;
+    
+//         if (value == null) {
+//       html += `<span>${texts[conteur]}</span>`;
+//     } else if (value === texts[conteur]) {
+//       html += `<span style="color:green">${texts[conteur]}</span>`;
+      
+//     } else {
+//       html += `<span style="color:red">${texts[conteur]}</span>`;
+//     }
+//     conteur++
+    
+//   document.getElementById('display-txt').innerHTML = html;
+// });
 
