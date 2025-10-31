@@ -64,9 +64,9 @@ header{
 }
 .input-text{
     position: fixed;
-    top: 42%;
+    top: 45%;
     width: 90%;
-    height: 30vh;
+    height: 20%;
     background-color: transparent;
     border: 2px solid white;
     font-size: 40px;
