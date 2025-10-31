@@ -26,6 +26,8 @@ let nbrtyping = 0;
 let date = new Date();
 let second = 25;
 let timer = null;
+var counter_mistakes = 0;
+var sum_mistakes = 0;
 //let time = ;
 //console.log(second);
 
@@ -59,35 +61,20 @@ function timepersecond()
     
     for(let i = 0; i < texts.length; i++)
     {
+      if(value.length === texts.length)
+      {
+        input.disabled = true;
+      }
     if (value[i] == null) {
       html += `<span>${texts[i]}</span>`;
     } else if (value[i] === texts[i]) {
       html += `<span style="color:green">${texts[i]}</span>`; 
     }else {
       html += `<span style="color:red">${texts[i]}</span>`;
+      counter_mistakes++;
     }
     }
-  document.getElementById('display-txt').innerHTML = html;
+    document.getElementById('display-txt').innerHTML = html;
+    document.getElementById('mistakes').innerText = counter_mistakes;
 });
-
-
-// document.getElementById('display-txt').innerText = texts;
-// const input = document.getElementById('input-text');
-
-//     input.addEventListener('keypress', (e)=>{
-//     let html = '';
-//     const value = e.key;
-    
-//         if (value == null) {
-//       html += `<span>${texts[conteur]}</span>`;
-//     } else if (value === texts[conteur]) {
-//       html += `<span style="color:green">${texts[conteur]}</span>`;
-      
-//     } else {
-//       html += `<span style="color:red">${texts[conteur]}</span>`;
-//     }
-//     conteur++
-    
-//   document.getElementById('display-txt').innerHTML = html;
-// });
 
