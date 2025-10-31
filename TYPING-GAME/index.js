@@ -21,10 +21,10 @@ const texts =
 document.getElementById('display-txt').innerText = texts;
 const input = document.getElementById('input-text');
 
-let wpm = 0;
+
 let second = 25;
 let timer = null;
-
+let wpm = 0;
 function timepersecond()
 {
   timer = setInterval(()=>{
@@ -44,8 +44,6 @@ function timepersecond()
   },1000);
   
 }
-  
-    
     // counter_mistakes = counter(value, texts);
     // document.getElementById('mistakes').innerText = counter_mistakes;
     function typing(userInput, textToType)
@@ -53,12 +51,16 @@ function timepersecond()
         let html = '';
         let counter_mistakes = 0;
         let allText = textToType;
+        const words = userInput.trim().split(/\s+/).length;
+        const wpm = Math.round(words / (25 / 60));
+        document.getElementById('wpm').innerText = wpm;
+
         for(let i = 0; i < allText.length; i++)
         {
           
-          const userinput = userInput[i];
-          const textTro = allText[i];
-        
+        const userinput = userInput[i];
+        const textTro = allText[i];
+
         if (userinput == null) {
           html += `<span>${textTro}</span>`;
         } else if (userinput === textTro) {
@@ -70,6 +72,7 @@ function timepersecond()
     }
     document.getElementById('display-txt').innerHTML = html;
     document.getElementById('mistakes').innerText = counter_mistakes;
+
     if(userInput.length >= allText.length) {
         input.disabled = true;
     }
