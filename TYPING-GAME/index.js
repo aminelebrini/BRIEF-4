@@ -3,7 +3,7 @@ const texts =
     
 document.getElementById('display-txt').innerText = texts;
 const input = document.getElementById('input-text');
-
+const repload = document.getElementById('restart-btn');
 
 let second = 60;
 let timer = null;
@@ -95,3 +95,10 @@ function timepersecond()
     typing(input.value, texts);
   });
 
+repload.addEventListener('click', ()=>{
+  input.textContent = "";
+  document.getElementById('mistakes').innerText = "";
+  document.getElementById('pourcentage').innerText = "";
+  document.getElementById('wpm').innerText = "";
+  document.getElementById("timer").innerText = 60;
+});
