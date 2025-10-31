@@ -22,14 +22,8 @@ document.getElementById('display-txt').innerText = texts;
 const input = document.getElementById('input-text');
 
 let wpm = 0;
-let nbrtyping = 0;
-let date = new Date();
 let second = 25;
 let timer = null;
-var counter_mistakes = 0;
-var sum_mistakes = 0;
-//let time = ;
-//console.log(second);
 
 function timepersecond()
 {
@@ -50,31 +44,42 @@ function timepersecond()
   },1000);
   
 }
-
+  
+    
+    // counter_mistakes = counter(value, texts);
+    // document.getElementById('mistakes').innerText = counter_mistakes;
+    function typing(userInput, textToType)
+    {
+        let html = '';
+        let counter_mistakes = 0;
+        let allText = textToType;
+        for(let i = 0; i < allText.length; i++)
+        {
+          
+          const userinput = userInput[i];
+          const textTro = allText[i];
+        
+        if (userinput == null) {
+          html += `<span>${textTro}</span>`;
+        } else if (userinput === textTro) {
+          html += `<span style="color:green">${textTro}</span>`; 
+        }else {
+          html += `<span style="color:red">${textTro}</span>`;
+          counter_mistakes++;
+        }
+    }
+    document.getElementById('display-txt').innerHTML = html;
+    document.getElementById('mistakes').innerText = counter_mistakes;
+    if(userInput.length >= allText.length) {
+        input.disabled = true;
+    }
+  }
+  //-------------------
     input.addEventListener('keyup', ()=>{
       if(!timer)
     {
       timepersecond();
     }
-    let html = '';
-    const value = input.value;
-    
-    for(let i = 0; i < texts.length; i++)
-    {
-      if(value.length === texts.length)
-      {
-        input.disabled = true;
-      }
-    if (value[i] == null) {
-      html += `<span>${texts[i]}</span>`;
-    } else if (value[i] === texts[i]) {
-      html += `<span style="color:green">${texts[i]}</span>`; 
-    }else {
-      html += `<span style="color:red">${texts[i]}</span>`;
-      counter_mistakes++;
-    }
-    }
-    document.getElementById('display-txt').innerHTML = html;
-    document.getElementById('mistakes').innerText = counter_mistakes;
-});
+    typing(input.value, texts);
+  });
 
