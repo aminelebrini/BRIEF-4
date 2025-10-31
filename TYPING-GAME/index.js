@@ -21,17 +21,49 @@ const texts =
 document.getElementById('display-txt').innerText = texts;
 const input = document.getElementById('input-text');
 
-    input.addEventListener('keydown', ()=>{
+let wpm = 0;
+let nbrtyping = 0;
+let date = new Date();
+let second = 25;
+let timer = null;
+//let time = ;
+//console.log(second);
+
+function timepersecond()
+{
+  timer = setInterval(()=>{
+    if(second >= 0)
+    {
+      second--;
+      document.getElementById("timer").innerText = `${second}`;
+      //console.log(second);
+    }
+    if(second == 0)
+    {
+      input.disabled = true;
+      //console.log("time out");
+      alert('Le temps est écoulé.');
+      clearInterval(timer);
+    }
+  },1000);
+  
+}
+
+    input.addEventListener('keyup', ()=>{
+      if(!timer)
+    {
+      timepersecond();
+    }
     let html = '';
     const value = input.value;
+    
     for(let i = 0; i < texts.length; i++)
     {
-        if (value[i] == null) {
+    if (value[i] == null) {
       html += `<span>${texts[i]}</span>`;
     } else if (value[i] === texts[i]) {
-      html += `<span style="color:green">${texts[i]}</span>`;
-      
-    } else   {
+      html += `<span style="color:green">${texts[i]}</span>`; 
+    }else {
       html += `<span style="color:red">${texts[i]}</span>`;
     }
     }
