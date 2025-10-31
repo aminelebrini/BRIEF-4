@@ -4,15 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <title>TYPING-GAME</title>
 </head>
 <body>
     <header>
-        <div class="title">
+        <div class="logo">
+            <i class="fa-solid fa-keyboard"></i>
             <h1>TYPING-GAME</h1>
-        </div>
-        <div class="profile-data">
-            <h2>AMINE LEBRNI</h2>
         </div>
     </header>
     <hr>
@@ -25,16 +24,17 @@
         <option value="level3">LEVEL 3</option>
     </select>
     </div> -->
-        <input type="text" class="input-text" id="input-text">
         <div class="display-txt" id="display-txt">
             <h4 id="s"></h4>
         </div>
+        <input type="text" class="input-text" id="input-text" placeholder="Tipe ici">
         <div class="board" id="board">
-            <p>Mot par Second WPM : <span id="wpm"></span></p>
+            <p>Mot par Seconde WPM : <span id="wpm"></span></p>
             <p>Erreurs typographiques : <span id="mistakes">0</span></p>
-            <p>Taux de réussite : <span id="pourcentage">50%</span></p>
-            <p>Time :<span id="timer">60</span></p>
+            <p>Taux de réussite : <span id="pourcentage"></span><span>%</span></p>
+            <p>Time : <span id="timer">60 </span><span>S</span></p>
         </div>
+        <button id="restart-btn">Rejouer</button>
     </main>
     
     <script src="index.js"></script>
