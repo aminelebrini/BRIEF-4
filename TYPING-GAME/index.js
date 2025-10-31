@@ -22,7 +22,7 @@ document.getElementById('display-txt').innerText = texts;
 const input = document.getElementById('input-text');
 
 
-let second = 25;
+let second = 60;
 let timer = null;
 let wpm = 0;
 function timepersecond()
@@ -50,10 +50,32 @@ function timepersecond()
     {
         let html = '';
         let counter_mistakes = 0;
+        let counter_correct = 0;
         let allText = textToType;
         const words = userInput.trim().split(/\s+/).length;
         const wpm = Math.round(words / (25 / 60));
         document.getElementById('wpm').innerText = wpm;
+
+        if(wpm <= 30)
+        {
+          document.getElementById('wpm').innerText = "Slow";
+        }
+        else if(wpm > 30 && wpm <= 40)
+        {
+          document.getElementById('wpm').innerText = "Moyen";
+        }
+        else if(wpm > 40 && wpm <= 60)
+        {
+          document.getElementById('wpm').innerText = "Rapide";
+        }
+        else if(wpm > 60 && wpm <= 80)
+        {
+          document.getElementById('wpm').innerText = "Très rapide";
+        }
+        else if(wpm > 80)
+        {
+          document.getElementById('wpm').innerText = "Excellent";
+        }
 
         for(let i = 0; i < allText.length; i++)
         {
@@ -65,13 +87,17 @@ function timepersecond()
           html += `<span>${textTro}</span>`;
         } else if (userinput === textTro) {
           html += `<span style="color:green">${textTro}</span>`; 
+          counter_correct++;
         }else {
           html += `<span style="color:red">${textTro}</span>`;
           counter_mistakes++;
         }
     }
+    let total_char = counter_correct;
+    let taux_reaussite = Math.floor((total_char / allText.length) * 100);
     document.getElementById('display-txt').innerHTML = html;
     document.getElementById('mistakes').innerText = counter_mistakes;
+    document.getElementById('pourcentage').innerText = taux_reaussite;
 
     if(userInput.length >= allText.length) {
         input.disabled = true;
