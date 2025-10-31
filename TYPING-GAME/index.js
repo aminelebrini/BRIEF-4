@@ -96,9 +96,6 @@ function timepersecond()
   });
 
 repload.addEventListener('click', ()=>{
-  input.textContent = "";
-  document.getElementById('mistakes').innerText = "";
-  document.getElementById('pourcentage').innerText = "";
-  document.getElementById('wpm').innerText = "";
-  document.getElementById("timer").innerText = 60;
+  
+  location.reload();
 });
